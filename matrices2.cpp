@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int n;
-    cout << "Ingrese el tamaño de la matriz cuadrada: ";
+    cout << "Ingrese el tamanio de la matriz cuadrada: ";
     cin >> n;
 
     int matriz[n][n];
