@@ -16,6 +16,7 @@ int main() {
     cout << "Ingrese el nombre del partido " << i + 1 << ": "; cin >> nombresPartidos[i];
   }
 
+  // Ingresar los votos de cada ciudad para cada partido
   for (int ciudad = 0; ciudad < numCiudades; ciudad++) {
     cout << "\n-- Ciudad " << ciudad + 1 << " --" << endl;
     for (int partido = 0; partido < numPartidos; partido++) {
@@ -24,19 +25,21 @@ int main() {
     }
   }
 
+  // Contar los votos totales de cada partido
   for (int ciudad = 0; ciudad < numCiudades; ciudad++) {
     for (int partido = 0; partido < numPartidos; partido++) {
       votosTotalesPartido[partido] += votosCiudades[ciudad][partido];
     }
   }
 
+  // Identificar el partido ganador a nivel nacional
   int ganadorNacional = 0;
   for (int partido = 1; partido < numPartidos; partido++) {
     if (votosTotalesPartido[partido] > votosTotalesPartido[ganadorNacional]) {
       ganadorNacional = partido;
     }
   }
-
+  // Identificar la ciudad con mayor votación para el partido ganador
   for (int ciudad = 0; ciudad < numCiudades; ciudad++) {
     if (votosCiudades[ciudad][ganadorNacional] > mayorVotosCiudad) {
       mayorVotosCiudad = votosCiudades[ciudad][ganadorNacional];
@@ -44,6 +47,7 @@ int main() {
     }
   }
 
+  // Mostrar los resultados
   cout << "\n** Resultados **" << endl;
   cout << "Partido ganador a nivel nacional: " << nombresPartidos[ganadorNacional] << endl;
   for (int i = 0; i < numCiudades; i++) {
