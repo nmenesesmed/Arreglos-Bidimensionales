@@ -8,22 +8,26 @@ int main() {
     int columnas = 3 * n;
     int matriz[filas][columnas];
 
+    // Inicializar la matriz con ceros
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
             matriz[i][j] = 0;
         }
     }
 
+    // Colocar unos en la primera y última fila
     for (int j = 0; j < columnas; ++j) {
         matriz[0][j] = 1;
         matriz[filas - 1][j] = 1;
     }
 
+    // Colocar unos en la primera y última columna
     for (int i = 0; i < filas; ++i) {
         matriz[i][0] = 1;
         matriz[i][columnas - 1] = 1;
     }
 
+    // Mostrar la matriz
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
             cout << matriz[i][j];
