@@ -6,6 +6,7 @@ int main() {
   float ventas[semanasMes][diasSemana];
   float totalVentas = 0.0f;
 
+  // Ingresar las ventas diarias de cada semana
   for (int semana = 0; semana < semanasMes; semana++) {
     for (int dia = 0; dia < diasSemana; dia++) {
       cout << "Ingrese las ventas del dia " << dia + 1 << " de la semana " << semana + 1 << ": ";
@@ -13,6 +14,7 @@ int main() {
     }
   }
 
+  // Calcular las ventas semanales
   for (int semana = 0; semana < semanasMes; semana++) {
     float ventasSemana = 0.0f;
     for (int dia = 0; dia < diasSemana; dia++) {
@@ -22,6 +24,7 @@ int main() {
     totalVentas += ventasSemana;
   }
 
+  // Mostrar la venta total del mes
   cout << "Venta total del mes: " << totalVentas << endl;
 
   return 0;
